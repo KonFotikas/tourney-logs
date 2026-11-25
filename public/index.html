@@ -249,7 +249,14 @@ button.pl-row:hover { background: var(--surface); }
 .zoom .btn + .btn { border-left: none; }
 .zoom .zlabel { min-width: 62px; font-size: 13px; }
 .zoom #zFit { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
-.bracket-scroll { touch-action: pan-x pan-y; }
+.bracket-scroll { touch-action: pan-x pan-y; scrollbar-color: #4a4a4a transparent; }
+.bracket-scroll::-webkit-scrollbar { height: 10px; }
+.bracket-scroll::-webkit-scrollbar-thumb { background: #4a4a4a; }
+/* With a mouse, drag the bracket to move around it. */
+@media (pointer: fine) {
+  .bracket-scroll { cursor: grab; user-select: none; -webkit-user-select: none; }
+  .bracket-scroll.dragging, .bracket-scroll.dragging .mbox { cursor: grabbing; }
+}
 .bracket-scroll.zoomed { scroll-snap-type: none !important; }
 .section:has(.bracket-scroll.zoomed) .swipe-hint { display: none; }
 .zoomer > .bracket { width: max-content; transform-origin: 0 0; }
@@ -845,6 +852,36 @@ dialog h2 { font-family: var(--font-display); font-size: 28px; margin: 0; text-t
     const widest = Math.max(...scrolls.map(sc => sc.querySelector(".bracket").offsetWidth));
     setZoom(Math.min(1, Math.floor((avail / widest) * 100) / 100));
   });
+  // Mouse: press and drag the bracket to move around it, sideways and up/down (a mouse wheel on its own only
+  // scrolls the page up and down). A drag doesn't count as a click, so it never opens a match by accident.
+  let drag = null;
+  $("mArea").addEventListener("pointerdown", (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    const sc = e.target.closest(".bracket-scroll"); if (!sc) return;
+    drag = { sc, id: e.pointerId, x: e.clientX, y: e.clientY, left: sc.scrollLeft, top: window.scrollY, moved: false };
+  });
+  window.addEventListener("pointermove", (e) => {
+    if (!drag || e.pointerId !== drag.id) return;
+    const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    if (!drag.moved) {
+      if (Math.hypot(dx, dy) < 6) return;
+      drag.moved = true; drag.sc.classList.add("dragging");
+    }
+    e.preventDefault();
+    drag.sc.scrollLeft = drag.left - dx;
+    window.scrollTo(window.scrollX, drag.top - dy);
+  });
+  const endDrag = () => {
+    if (!drag) return;
+    const d = drag; drag = null; d.sc.classList.remove("dragging");
+    if (!d.moved) return;
+    const swallow = (ev) => { ev.stopPropagation(); ev.preventDefault(); };
+    window.addEventListener("click", swallow, { capture: true, once: true });
+    setTimeout(() => window.removeEventListener("click", swallow, { capture: true }), 0);
+  };
+  window.addEventListener("pointerup", endDrag);
+  window.addEventListener("pointercancel", endDrag);
+
   // Pinch on a phone, or ctrl + scroll / trackpad pinch on a computer, zooms the bracket only.
   let pinch = null;
   const dist = (t) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY);
