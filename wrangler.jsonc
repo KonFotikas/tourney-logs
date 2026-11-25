@@ -4,6 +4,9 @@
   "main": "src/worker.js",
   "compatibility_date": "2026-11-01",
 
+  // Serve the site at https://tourney-logs.<your-subdomain>.workers.dev
+  "workers_dev": true,
+
   // The site (public/) is served as static files; /api/* and /img/* go to the Worker.
   "assets": { "directory": "./public", "binding": "ASSETS" },
 
