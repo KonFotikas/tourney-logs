@@ -1,0 +1,15 @@
+{
+  "name": "tourney-logs",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tournament brackets, results and decks, kept up to date from Challonge.",
+  "scripts": {
+    "dev": "wrangler dev --test-scheduled",
+    "deploy": "wrangler deploy",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.168.0"
+  }
+}

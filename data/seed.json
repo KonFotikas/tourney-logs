@@ -1,0 +1,1757 @@
+{
+ "exportedFrom": "Match Book (claude.ai artifact)",
+ "tournaments": [
+  {
+   "id": "8ezukeos",
+   "data": {
+    "counts": {
+     "done": 24,
+     "live": 0,
+     "total": 24
+    },
+    "createdAt": "2026-11-24T03:07:56.761570Z",
+    "date": "2026-10-09",
+    "format": "Double elimination",
+    "game": "Yu-Gi-Oh!",
+    "name": "Grandprixio 6",
+    "notes": "",
+    "slug": "8ezukeos",
+    "sourceUrl": "https://challonge.com/8ezukeos",
+    "updatedAt": "2026-11-24T03:07:56.761575Z"
+   },
+   "matches": [
+    {
+     "id": "c475122731",
+     "data": {
+      "challongeId": 475122731,
+      "identifier": "A",
+      "links": [],
+      "notes": "",
+      "num": 1,
+      "p1": "shuraig",
+      "p1From": null,
+      "p2": "fowtik",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760318Z",
+      "when": "2026-10-09T17:00",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122732",
+     "data": {
+      "challongeId": 475122732,
+      "identifier": "B",
+      "links": [],
+      "notes": "",
+      "num": 2,
+      "p1": "heartscrypter",
+      "p1From": null,
+      "p2": "chaosnova",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760465Z",
+      "when": "2026-10-09T17:00",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122733",
+     "data": {
+      "challongeId": 475122733,
+      "identifier": "C",
+      "links": [],
+      "notes": "",
+      "num": 3,
+      "p1": "dude with pillows",
+      "p1From": null,
+      "p2": "yokeman",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760537Z",
+      "when": "2026-10-09T17:00",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122734",
+     "data": {
+      "challongeId": 475122734,
+      "identifier": "D",
+      "links": [],
+      "notes": "",
+      "num": 4,
+      "p1": "brahimpoke",
+      "p1From": null,
+      "p2": "soldier",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760600Z",
+      "when": "2026-10-09T17:00",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122735",
+     "data": {
+      "challongeId": 475122735,
+      "identifier": "E",
+      "links": [],
+      "notes": "",
+      "num": 5,
+      "p1": "drakenfield",
+      "p1From": null,
+      "p2": "mistah yaga",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760739Z",
+      "when": "2026-10-09T17:00",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122736",
+     "data": {
+      "challongeId": 475122736,
+      "edited": true,
+      "identifier": "F",
+      "links": [],
+      "notes": "",
+      "num": 7,
+      "p1": "nooma",
+      "p1From": null,
+      "p2": "fowtik",
+      "p2From": {
+       "loser": false,
+       "match": "c475122731"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "0-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:33:54.410Z",
+      "when": "2026-10-09T19:48",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122737",
+     "data": {
+      "challongeId": 475122737,
+      "edited": true,
+      "identifier": "G",
+      "links": [],
+      "notes": "",
+      "num": 8,
+      "p1": "chaosnova",
+      "p1From": {
+       "loser": false,
+       "match": "c475122732"
+      },
+      "p2": "yokeman",
+      "p2From": {
+       "loser": false,
+       "match": "c475122733"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:34:02.505Z",
+      "when": "2026-10-11T18:50",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122738",
+     "data": {
+      "challongeId": 475122738,
+      "identifier": "H",
+      "links": [],
+      "notes": "",
+      "num": 9,
+      "p1": "dragongod",
+      "p1From": null,
+      "p2": "brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c475122734"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760950Z",
+      "when": "2026-10-11T06:49",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122739",
+     "data": {
+      "challongeId": 475122739,
+      "identifier": "I",
+      "links": [],
+      "notes": "",
+      "num": 10,
+      "p1": "yhwach",
+      "p1From": null,
+      "p2": "mistah yaga",
+      "p2From": {
+       "loser": false,
+       "match": "c475122735"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "0-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760985Z",
+      "when": "2026-10-10T13:35",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122740",
+     "data": {
+      "challongeId": 475122740,
+      "identifier": "J",
+      "links": [],
+      "notes": "",
+      "num": 17,
+      "p1": "fowtik",
+      "p1From": {
+       "loser": false,
+       "match": "c475122736"
+      },
+      "p2": "yokeman",
+      "p2From": {
+       "loser": false,
+       "match": "c475122737"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761227Z",
+      "when": "2026-10-13T17:23",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122741",
+     "data": {
+      "challongeId": 475122741,
+      "identifier": "K",
+      "links": [],
+      "notes": "",
+      "num": 18,
+      "p1": "brahimpoke",
+      "p1From": {
+       "loser": false,
+       "match": "c475122738"
+      },
+      "p2": "mistah yaga",
+      "p2From": {
+       "loser": false,
+       "match": "c475122739"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761264Z",
+      "when": "2026-10-12T17:56",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122742",
+     "data": {
+      "challongeId": 475122742,
+      "identifier": "L",
+      "links": [],
+      "notes": "",
+      "num": 22,
+      "p1": "fowtik",
+      "p1From": {
+       "loser": false,
+       "match": "c475122740"
+      },
+      "p2": "mistah yaga",
+      "p2From": {
+       "loser": false,
+       "match": "c475122741"
+      },
+      "round": "Winners final",
+      "roundOrder": 204,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761401Z",
+      "when": "2026-10-14T20:31",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122743",
+     "data": {
+      "challongeId": 475122743,
+      "identifier": "O",
+      "links": [],
+      "notes": "",
+      "num": 6,
+      "p1": "heartscrypter",
+      "p1From": {
+       "loser": true,
+       "match": "c475122732"
+      },
+      "p2": "dude with pillows",
+      "p2From": {
+       "loser": true,
+       "match": "c475122733"
+      },
+      "round": "Losers round 1",
+      "roundOrder": 301,
+      "score": "2-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.760825Z",
+      "when": "2026-10-11T18:50",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122744",
+     "data": {
+      "challongeId": 475122744,
+      "identifier": "P",
+      "links": [],
+      "notes": "",
+      "num": 14,
+      "p1": "yhwach",
+      "p1From": {
+       "loser": true,
+       "match": "c475122739"
+      },
+      "p2": "shuraig",
+      "p2From": {
+       "loser": true,
+       "match": "c475122731"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "2-1",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761123Z",
+      "when": "2026-10-12T17:56",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122745",
+     "data": {
+      "challongeId": 475122745,
+      "identifier": "Q",
+      "links": [],
+      "notes": "",
+      "num": 13,
+      "p1": "dragongod",
+      "p1From": {
+       "loser": true,
+       "match": "c475122738"
+      },
+      "p2": "heartscrypter",
+      "p2From": {
+       "loser": false,
+       "match": "c475122743"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "1-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761091Z",
+      "when": "2026-10-13T10:21",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122746",
+     "data": {
+      "challongeId": 475122746,
+      "identifier": "R",
+      "links": [],
+      "notes": "",
+      "num": 12,
+      "p1": "chaosnova",
+      "p1From": {
+       "loser": true,
+       "match": "c475122737"
+      },
+      "p2": "soldier",
+      "p2From": {
+       "loser": true,
+       "match": "c475122734"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761061Z",
+      "when": "2026-10-13T17:23",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122747",
+     "data": {
+      "challongeId": 475122747,
+      "identifier": "S",
+      "links": [],
+      "notes": "",
+      "num": 11,
+      "p1": "nooma",
+      "p1From": {
+       "loser": true,
+       "match": "c475122736"
+      },
+      "p2": "drakenfield",
+      "p2From": {
+       "loser": true,
+       "match": "c475122735"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761020Z",
+      "when": "2026-10-10T13:35",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122748",
+     "data": {
+      "challongeId": 475122748,
+      "identifier": "T",
+      "links": [],
+      "notes": "",
+      "num": 16,
+      "p1": "yhwach",
+      "p1From": {
+       "loser": false,
+       "match": "c475122744"
+      },
+      "p2": "heartscrypter",
+      "p2From": {
+       "loser": false,
+       "match": "c475122745"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "1-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761189Z",
+      "when": "2026-10-14T22:30",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122749",
+     "data": {
+      "challongeId": 475122749,
+      "identifier": "U",
+      "links": [],
+      "notes": "",
+      "num": 15,
+      "p1": "soldier",
+      "p1From": {
+       "loser": false,
+       "match": "c475122746"
+      },
+      "p2": "drakenfield",
+      "p2From": {
+       "loser": false,
+       "match": "c475122747"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "2-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761157Z",
+      "when": "2026-10-16T14:18",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122750",
+     "data": {
+      "challongeId": 475122750,
+      "identifier": "V",
+      "links": [],
+      "notes": "",
+      "num": 19,
+      "p1": "yokeman",
+      "p1From": {
+       "loser": true,
+       "match": "c475122740"
+      },
+      "p2": "heartscrypter",
+      "p2From": {
+       "loser": false,
+       "match": "c475122748"
+      },
+      "round": "Losers round 4",
+      "roundOrder": 304,
+      "score": "1-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761312Z",
+      "when": "2026-10-17T10:10",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122751",
+     "data": {
+      "challongeId": 475122751,
+      "identifier": "W",
+      "links": [],
+      "notes": "",
+      "num": 20,
+      "p1": "brahimpoke",
+      "p1From": {
+       "loser": true,
+       "match": "c475122741"
+      },
+      "p2": "soldier",
+      "p2From": {
+       "loser": false,
+       "match": "c475122749"
+      },
+      "round": "Losers round 4",
+      "roundOrder": 304,
+      "score": "2-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761341Z",
+      "when": "2026-10-17T22:52",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122752",
+     "data": {
+      "challongeId": 475122752,
+      "identifier": "X",
+      "links": [],
+      "notes": "",
+      "num": 21,
+      "p1": "heartscrypter",
+      "p1From": {
+       "loser": false,
+       "match": "c475122750"
+      },
+      "p2": "brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c475122751"
+      },
+      "round": "Losers round 5",
+      "roundOrder": 305,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761370Z",
+      "when": "2026-10-19T11:34",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c475122753",
+     "data": {
+      "challongeId": 475122753,
+      "identifier": "Y",
+      "links": [],
+      "notes": "",
+      "num": 23,
+      "p1": "fowtik",
+      "p1From": {
+       "loser": true,
+       "match": "c475122742"
+      },
+      "p2": "brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c475122752"
+      },
+      "round": "Losers final",
+      "roundOrder": 306,
+      "score": "2-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:07:56.761434Z",
+      "when": "2026-10-19T16:13",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122754",
+     "data": {
+      "challongeId": 475122754,
+      "edited": true,
+      "identifier": "M",
+      "links": [],
+      "notes": "",
+      "num": 24,
+      "p1": "mistah yaga",
+      "p1From": {
+       "loser": false,
+       "match": "c475122742"
+      },
+      "p2": "fowtik",
+      "p2From": {
+       "loser": false,
+       "match": "c475122753"
+      },
+      "round": "Grand final",
+      "roundOrder": 250,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:13:42.924Z",
+      "when": "2026-10-19T16:36",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c475122755",
+     "data": {
+      "challongeId": 475122755,
+      "identifier": "N",
+      "links": [],
+      "notes": "",
+      "num": 25,
+      "p1": "",
+      "p1From": {
+       "loser": false,
+       "match": "c475122754"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": true,
+       "match": "c475122754"
+      },
+      "round": "Grand final reset",
+      "roundOrder": 251,
+      "score": "",
+      "section": "Winners",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:07:56.761509Z",
+      "when": "",
+      "winner": ""
+     }
+    }
+   ],
+   "decks": []
+  },
+  {
+   "id": "phet7vav",
+   "data": {
+    "counts": {
+     "done": 28,
+     "live": 0,
+     "total": 39
+    },
+    "createdAt": "2026-11-24T03:36:06.497505Z",
+    "date": "2026-11-19",
+    "format": "Double elimination",
+    "game": "Yu-Gi-Oh!",
+    "name": "Grand Prixio 7",
+    "notes": "",
+    "slug": "phet7vav",
+    "sourceUrl": "https://challonge.com/phet7vav",
+    "updatedAt": "2026-11-24T03:36:06.497505Z"
+   },
+   "matches": [
+    {
+     "id": "c479879402",
+     "data": {
+      "challongeId": 479879402,
+      "identifier": "A",
+      "links": [],
+      "notes": "",
+      "num": 1,
+      "p1": "Dude with good pillows",
+      "p1From": null,
+      "p2": "Yhwach",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.495938Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879403",
+     "data": {
+      "challongeId": 479879403,
+      "identifier": "B",
+      "links": [],
+      "notes": "",
+      "num": 2,
+      "p1": "Shuraig",
+      "p1From": null,
+      "p2": "Astral",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496054Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879404",
+     "data": {
+      "challongeId": 479879404,
+      "identifier": "C",
+      "links": [],
+      "notes": "",
+      "num": 3,
+      "p1": "dont_gg",
+      "p1From": null,
+      "p2": "Drakenfield",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496117Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879405",
+     "data": {
+      "challongeId": 479879405,
+      "identifier": "D",
+      "links": [],
+      "notes": "",
+      "num": 4,
+      "p1": "LunieLunie",
+      "p1From": null,
+      "p2": "Soldier",
+      "p2From": null,
+      "round": "Winners round 1",
+      "roundOrder": 201,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496160Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879406",
+     "data": {
+      "challongeId": 479879406,
+      "identifier": "E",
+      "links": [],
+      "notes": "",
+      "num": 9,
+      "p1": "Ravage",
+      "p1From": null,
+      "p2": "Dude with good pillows",
+      "p2From": {
+       "loser": false,
+       "match": "c479879402"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496342Z",
+      "when": "2026-11-21T05:22",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879407",
+     "data": {
+      "challongeId": 479879407,
+      "identifier": "F",
+      "links": [],
+      "notes": "",
+      "num": 5,
+      "p1": "Chaosnova",
+      "p1From": null,
+      "p2": "Hihi",
+      "p2From": null,
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496200Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879408",
+     "data": {
+      "challongeId": 479879408,
+      "identifier": "G",
+      "links": [],
+      "notes": "",
+      "num": 10,
+      "p1": "Dragongod",
+      "p1From": null,
+      "p2": "Shuraig",
+      "p2From": {
+       "loser": false,
+       "match": "c479879403"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496414Z",
+      "when": "2026-11-20T01:58",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879409",
+     "data": {
+      "challongeId": 479879409,
+      "identifier": "H",
+      "links": [],
+      "notes": "",
+      "num": 6,
+      "p1": "Fowtik",
+      "p1From": null,
+      "p2": "Matrixx",
+      "p2From": null,
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496238Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879410",
+     "data": {
+      "challongeId": 479879410,
+      "identifier": "I",
+      "links": [],
+      "notes": "",
+      "num": 11,
+      "p1": "Nooma",
+      "p1From": null,
+      "p2": "dont_gg",
+      "p2From": {
+       "loser": false,
+       "match": "c479879404"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "0-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496453Z",
+      "when": "2026-11-20T07:19",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879411",
+     "data": {
+      "challongeId": 479879411,
+      "identifier": "J",
+      "links": [],
+      "notes": "",
+      "num": 7,
+      "p1": "Brahimpoke",
+      "p1From": null,
+      "p2": "Heartscrypter",
+      "p2From": null,
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496272Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879412",
+     "data": {
+      "challongeId": 479879412,
+      "identifier": "K",
+      "links": [],
+      "notes": "",
+      "num": 12,
+      "p1": "Floof",
+      "p1From": null,
+      "p2": "LunieLunie",
+      "p2From": {
+       "loser": false,
+       "match": "c479879405"
+      },
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496490Z",
+      "when": "2026-11-19T13:46",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879413",
+     "data": {
+      "challongeId": 479879413,
+      "identifier": "L",
+      "links": [],
+      "notes": "",
+      "num": 8,
+      "p1": "Iwad",
+      "p1From": null,
+      "p2": "Mistah Yaga",
+      "p2From": null,
+      "round": "Winners round 2",
+      "roundOrder": 202,
+      "score": "2-0",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496306Z",
+      "when": "2026-11-19T05:53",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879414",
+     "data": {
+      "challongeId": 479879414,
+      "identifier": "M",
+      "links": [],
+      "notes": "",
+      "num": 21,
+      "p1": "Ravage",
+      "p1From": {
+       "loser": false,
+       "match": "c479879406"
+      },
+      "p2": "Chaosnova",
+      "p2From": {
+       "loser": false,
+       "match": "c479879407"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496849Z",
+      "when": "2026-11-21T10:37",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879415",
+     "data": {
+      "challongeId": 479879415,
+      "identifier": "N",
+      "links": [],
+      "notes": "",
+      "num": 22,
+      "p1": "Shuraig",
+      "p1From": {
+       "loser": false,
+       "match": "c479879408"
+      },
+      "p2": "Fowtik",
+      "p2From": {
+       "loser": false,
+       "match": "c479879409"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "0-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496886Z",
+      "when": "2026-11-21T01:09",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879416",
+     "data": {
+      "challongeId": 479879416,
+      "identifier": "O",
+      "links": [],
+      "notes": "",
+      "num": 23,
+      "p1": "dont_gg",
+      "p1From": {
+       "loser": false,
+       "match": "c479879410"
+      },
+      "p2": "Heartscrypter",
+      "p2From": {
+       "loser": false,
+       "match": "c479879411"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496923Z",
+      "when": "2026-11-20T11:41",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879417",
+     "data": {
+      "challongeId": 479879417,
+      "identifier": "P",
+      "links": [],
+      "notes": "",
+      "num": 24,
+      "p1": "Floof",
+      "p1From": {
+       "loser": false,
+       "match": "c479879412"
+      },
+      "p2": "Iwad",
+      "p2From": {
+       "loser": false,
+       "match": "c479879413"
+      },
+      "round": "Winners round 3",
+      "roundOrder": 203,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496959Z",
+      "when": "2026-11-20T07:23",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879418",
+     "data": {
+      "challongeId": 479879418,
+      "identifier": "Q",
+      "links": [],
+      "notes": "",
+      "num": 31,
+      "p1": "Chaosnova",
+      "p1From": {
+       "loser": false,
+       "match": "c479879414"
+      },
+      "p2": "Fowtik",
+      "p2From": {
+       "loser": false,
+       "match": "c479879415"
+      },
+      "round": "Winners round 4",
+      "roundOrder": 204,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.497208Z",
+      "when": "2026-11-22T00:36",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879419",
+     "data": {
+      "challongeId": 479879419,
+      "identifier": "R",
+      "links": [],
+      "notes": "",
+      "num": 32,
+      "p1": "Heartscrypter",
+      "p1From": {
+       "loser": false,
+       "match": "c479879416"
+      },
+      "p2": "Iwad",
+      "p2From": {
+       "loser": false,
+       "match": "c479879417"
+      },
+      "round": "Winners round 4",
+      "roundOrder": 204,
+      "score": "1-2",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.497244Z",
+      "when": "2026-11-22T09:39",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879420",
+     "data": {
+      "challongeId": 479879420,
+      "identifier": "S",
+      "links": [],
+      "notes": "",
+      "num": 36,
+      "p1": "Fowtik",
+      "p1From": {
+       "loser": false,
+       "match": "c479879418"
+      },
+      "p2": "Iwad",
+      "p2From": {
+       "loser": false,
+       "match": "c479879419"
+      },
+      "round": "Winners final",
+      "roundOrder": 205,
+      "score": "2-1",
+      "section": "Winners",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.497375Z",
+      "when": "2026-11-23T05:16",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879421",
+     "data": {
+      "challongeId": 479879421,
+      "identifier": "V",
+      "links": [],
+      "notes": "",
+      "num": 16,
+      "p1": "Mistah Yaga",
+      "p1From": {
+       "loser": true,
+       "match": "c479879413"
+      },
+      "p2": "Yhwach",
+      "p2From": {
+       "loser": true,
+       "match": "c479879402"
+      },
+      "round": "Losers round 1",
+      "roundOrder": 301,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496629Z",
+      "when": "2026-11-21T05:22",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879422",
+     "data": {
+      "challongeId": 479879422,
+      "identifier": "W",
+      "links": [],
+      "notes": "",
+      "num": 15,
+      "p1": "Brahimpoke",
+      "p1From": {
+       "loser": true,
+       "match": "c479879411"
+      },
+      "p2": "Astral",
+      "p2From": {
+       "loser": true,
+       "match": "c479879403"
+      },
+      "round": "Losers round 1",
+      "roundOrder": 301,
+      "score": "2-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496596Z",
+      "when": "2026-11-20T06:39",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879423",
+     "data": {
+      "challongeId": 479879423,
+      "identifier": "X",
+      "links": [],
+      "notes": "",
+      "num": 14,
+      "p1": "Matrixx",
+      "p1From": {
+       "loser": true,
+       "match": "c479879409"
+      },
+      "p2": "Drakenfield",
+      "p2From": {
+       "loser": true,
+       "match": "c479879404"
+      },
+      "round": "Losers round 1",
+      "roundOrder": 301,
+      "score": "2-1",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496562Z",
+      "when": "2026-11-20T07:28",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879424",
+     "data": {
+      "challongeId": 479879424,
+      "identifier": "Y",
+      "links": [],
+      "notes": "",
+      "num": 13,
+      "p1": "Hihi",
+      "p1From": {
+       "loser": true,
+       "match": "c479879407"
+      },
+      "p2": "Soldier",
+      "p2From": {
+       "loser": true,
+       "match": "c479879405"
+      },
+      "round": "Losers round 1",
+      "roundOrder": 301,
+      "score": "0-0",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496527Z",
+      "when": "2026-11-19T15:33",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879425",
+     "data": {
+      "challongeId": 479879425,
+      "identifier": "Z",
+      "links": [],
+      "notes": "",
+      "num": 20,
+      "p1": "LunieLunie",
+      "p1From": {
+       "loser": true,
+       "match": "c479879412"
+      },
+      "p2": "Yhwach",
+      "p2From": {
+       "loser": false,
+       "match": "c479879421"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496813Z",
+      "when": "2026-11-23T02:57",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879426",
+     "data": {
+      "challongeId": 479879426,
+      "identifier": "AA",
+      "links": [],
+      "notes": "",
+      "num": 19,
+      "p1": "Nooma",
+      "p1From": {
+       "loser": true,
+       "match": "c479879410"
+      },
+      "p2": "Brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c479879422"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "1-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496778Z",
+      "when": "2026-11-21T05:24",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879427",
+     "data": {
+      "challongeId": 479879427,
+      "identifier": "AB",
+      "links": [],
+      "notes": "",
+      "num": 18,
+      "p1": "Dragongod",
+      "p1From": {
+       "loser": true,
+       "match": "c479879408"
+      },
+      "p2": "Matrixx",
+      "p2From": {
+       "loser": false,
+       "match": "c479879423"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "2-1",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496737Z",
+      "when": "2026-11-22T12:21",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879428",
+     "data": {
+      "challongeId": 479879428,
+      "identifier": "AC",
+      "links": [],
+      "notes": "",
+      "num": 17,
+      "p1": "Dude with good pillows",
+      "p1From": {
+       "loser": true,
+       "match": "c479879406"
+      },
+      "p2": "Soldier",
+      "p2From": {
+       "loser": false,
+       "match": "c479879424"
+      },
+      "round": "Losers round 2",
+      "roundOrder": 302,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.496693Z",
+      "when": "2026-11-23T06:20",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879429",
+     "data": {
+      "challongeId": 479879429,
+      "identifier": "AD",
+      "links": [],
+      "notes": "",
+      "num": 26,
+      "p1": "Shuraig",
+      "p1From": {
+       "loser": true,
+       "match": "c479879415"
+      },
+      "p2": "Yhwach",
+      "p2From": {
+       "loser": false,
+       "match": "c479879425"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497030Z",
+      "when": "2026-11-23T09:49",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879430",
+     "data": {
+      "challongeId": 479879430,
+      "identifier": "AE",
+      "links": [],
+      "notes": "",
+      "num": 25,
+      "p1": "Ravage",
+      "p1From": {
+       "loser": true,
+       "match": "c479879414"
+      },
+      "p2": "Brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c479879426"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "0-2",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.496993Z",
+      "when": "2026-11-21T12:06",
+      "winner": "p2"
+     }
+    },
+    {
+     "id": "c479879431",
+     "data": {
+      "challongeId": 479879431,
+      "identifier": "AF",
+      "links": [],
+      "notes": "",
+      "num": 28,
+      "p1": "Floof",
+      "p1From": {
+       "loser": true,
+       "match": "c479879417"
+      },
+      "p2": "Dragongod",
+      "p2From": {
+       "loser": false,
+       "match": "c479879427"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "2-1",
+      "section": "Losers",
+      "status": "done",
+      "updatedAt": "2026-11-24T03:36:06.497113Z",
+      "when": "2026-11-23T06:13",
+      "winner": "p1"
+     }
+    },
+    {
+     "id": "c479879432",
+     "data": {
+      "challongeId": 479879432,
+      "identifier": "AG",
+      "links": [],
+      "notes": "",
+      "num": 27,
+      "p1": "dont_gg",
+      "p1From": {
+       "loser": true,
+       "match": "c479879416"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879428"
+      },
+      "round": "Losers round 3",
+      "roundOrder": 303,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497072Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879433",
+     "data": {
+      "challongeId": 479879433,
+      "identifier": "AH",
+      "links": [],
+      "notes": "",
+      "num": 29,
+      "p1": "",
+      "p1From": {
+       "loser": false,
+       "match": "c479879429"
+      },
+      "p2": "Brahimpoke",
+      "p2From": {
+       "loser": false,
+       "match": "c479879430"
+      },
+      "round": "Losers round 4",
+      "roundOrder": 304,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497145Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879434",
+     "data": {
+      "challongeId": 479879434,
+      "identifier": "AI",
+      "links": [],
+      "notes": "",
+      "num": 30,
+      "p1": "Floof",
+      "p1From": {
+       "loser": false,
+       "match": "c479879431"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879432"
+      },
+      "round": "Losers round 4",
+      "roundOrder": 304,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497176Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879435",
+     "data": {
+      "challongeId": 479879435,
+      "identifier": "AJ",
+      "links": [],
+      "notes": "",
+      "num": 34,
+      "p1": "Heartscrypter",
+      "p1From": {
+       "loser": true,
+       "match": "c479879419"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879433"
+      },
+      "round": "Losers round 5",
+      "roundOrder": 305,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497307Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879436",
+     "data": {
+      "challongeId": 479879436,
+      "identifier": "AK",
+      "links": [],
+      "notes": "",
+      "num": 33,
+      "p1": "Chaosnova",
+      "p1From": {
+       "loser": true,
+       "match": "c479879418"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879434"
+      },
+      "round": "Losers round 5",
+      "roundOrder": 305,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497278Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879437",
+     "data": {
+      "challongeId": 479879437,
+      "identifier": "AL",
+      "links": [],
+      "notes": "",
+      "num": 35,
+      "p1": "",
+      "p1From": {
+       "loser": false,
+       "match": "c479879435"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879436"
+      },
+      "round": "Losers round 6",
+      "roundOrder": 306,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497340Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879438",
+     "data": {
+      "challongeId": 479879438,
+      "identifier": "AM",
+      "links": [],
+      "notes": "",
+      "num": 37,
+      "p1": "Iwad",
+      "p1From": {
+       "loser": true,
+       "match": "c479879420"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879437"
+      },
+      "round": "Losers final",
+      "roundOrder": 307,
+      "score": "",
+      "section": "Losers",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497405Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879439",
+     "data": {
+      "challongeId": 479879439,
+      "identifier": "T",
+      "links": [],
+      "notes": "",
+      "num": 38,
+      "p1": "Fowtik",
+      "p1From": {
+       "loser": false,
+       "match": "c479879420"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": false,
+       "match": "c479879438"
+      },
+      "round": "Grand final",
+      "roundOrder": 250,
+      "score": "",
+      "section": "Winners",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497439Z",
+      "when": "",
+      "winner": ""
+     }
+    },
+    {
+     "id": "c479879440",
+     "data": {
+      "challongeId": 479879440,
+      "identifier": "U",
+      "links": [],
+      "notes": "",
+      "num": 39,
+      "p1": "",
+      "p1From": {
+       "loser": false,
+       "match": "c479879439"
+      },
+      "p2": "",
+      "p2From": {
+       "loser": true,
+       "match": "c479879439"
+      },
+      "round": "Grand final reset",
+      "roundOrder": 251,
+      "score": "",
+      "section": "Winners",
+      "status": "upcoming",
+      "updatedAt": "2026-11-24T03:36:06.497473Z",
+      "when": "",
+      "winner": ""
+     }
+    }
+   ],
+   "decks": [
+    {
+     "id": "p-fowtik-15w0jfx",
+     "data": {
+      "deck": "Artmage",
+      "imageId": "7fa8ff26dc5f006b90fe0a533f24ddd7",
+      "imageUrl": "",
+      "player": "Fowtik",
+      "updatedAt": "2026-11-24T16:55:48.181Z",
+      "seedImage": "/seed-images/7fa8ff26dc5f006b90fe0a533f24ddd7.png"
+     }
+    }
+   ]
+  }
+ ]
+}

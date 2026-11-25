@@ -1,0 +1,7 @@
+# Local development secrets for `npm run dev`. Copy to .dev.vars (which git ignores) and fill in.
+ADMIN_PASSWORD=choose-a-test-password
+ADMIN_TOKEN=optional-test-token
+CHALLONGE_USERNAME=your-challonge-username
+CHALLONGE_API_KEY=your-challonge-api-key
+# Optional: point at a mock server instead of the real Challonge API.
+# CHALLONGE_API_BASE=http://127.0.0.1:8799

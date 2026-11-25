@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tourney-logs",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-11-01",
+
+  // The site (public/) is served as static files; /api/* and /img/* go to the Worker.
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+
+  // Tournaments, matches, decks and decklist images. Created automatically on the first deploy.
+  // If a deploy says the database can't be found, create a D1 database named "tourney-logs" in the
+  // Cloudflare dashboard and add its id here as "database_id".
+  "d1_databases": [{ "binding": "DB", "database_name": "tourney-logs" }],
+
+  // Refresh ongoing tournaments from Challonge every 10 minutes (finished ones are skipped).
+  "triggers": { "crons": ["*/10 * * * *"] },
+
+  // Not secret. Secrets (CHALLONGE_USERNAME, CHALLONGE_API_KEY, ADMIN_PASSWORD, optional ADMIN_TOKEN)
+  // are set in the Cloudflare dashboard: Worker > Settings > Variables and Secrets.
+  "vars": { "STALE_DAYS": "14" },
+
+  "observability": { "enabled": true }
+}
