@@ -21,6 +21,10 @@
 
   // Not secret. Secrets (CHALLONGE_USERNAME, CHALLONGE_API_KEY, ADMIN_PASSWORD, optional ADMIN_TOKEN)
   // are set in the Cloudflare dashboard: Worker > Settings > Variables and Secrets.
+  // Keep variables added in the Cloudflare dashboard when deploying (otherwise a deploy removes plain-text
+  // ones that aren't listed here). Secrets are always kept.
+  "keep_vars": true,
+
   // MONTHLY_LIMIT: Challonge API requests allowed per month; nothing calls Challonge past it until the 1st.
   // STALE_DAYS: stop checking a tournament automatically after this many days with no changes.
   "vars": { "MONTHLY_LIMIT": "500", "STALE_DAYS": "60" },
