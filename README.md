@@ -29,7 +29,7 @@ You need a free Cloudflare account: <https://dash.cloudflare.com/sign-up>.
 
 3. **Open the site** at the address shown on the Worker's page, like
    `https://tourney-logs.<your-name>.workers.dev`. The tournaments and decks from Match Book are already
-   there. Press **Admin login** to edit.
+   there. To edit, open the site with `/#login` on the end (there is no login button on the page).
 
 From then on, every change pushed to the `main` branch goes live by itself in a minute or two.
 
