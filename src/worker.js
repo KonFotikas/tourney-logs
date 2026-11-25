@@ -2,7 +2,6 @@
 // matches, decks and decklist images in D1 (free, no card needed), and refreshes ongoing tournaments from Challonge on a
 // timer. The Challonge key and the admin password live in Worker secrets and never reach the browser.
 import { buildFromChallonge, challongeSlug } from "./importer.js";
-import { isDue } from "./schedule.js";
 import seed from "../data/seed.json";
 
 // ---------- database ----------
@@ -69,8 +68,21 @@ async function getTournament(env, id) {
 const isDone = (t) => t.challongeState === "complete" || !!(t.counts && t.counts.total > 0 && t.counts.done >= t.counts.total);
 
 // ---------- Challonge ----------
+// The Challonge account allows MONTHLY_LIMIT API requests a month (500). Every request is counted per
+// calendar month (UTC) in `meta`, and once the limit is reached nothing calls Challonge until the 1st.
+const monthKey = () => "calls:" + new Date().toISOString().slice(0, 7);
+async function callsThisMonth(env) {
+  const row = await env.DB.prepare("SELECT v FROM meta WHERE k = ?").bind(monthKey()).first();
+  return Number(row?.v || 0);
+}
+async function usage(env) {
+  return { month: monthKey().slice(6), used: await callsThisMonth(env), limit: Number(env.MONTHLY_LIMIT || 500) };
+}
 async function fetchChallonge(env, slug) {
   if (!env.CHALLONGE_USERNAME || !env.CHALLONGE_API_KEY) throw httpError(500, "The Challonge username or API key isn't set on the server yet.");
+  const limit = Number(env.MONTHLY_LIMIT || 500);
+  if (await callsThisMonth(env) >= limit) throw httpError(429, `This month's Challonge request limit (${limit}) is used up. Updates start again on the 1st.`);
+  await env.DB.prepare("INSERT INTO meta (k, v) VALUES (?, '1') ON CONFLICT(k) DO UPDATE SET v = CAST(v AS INTEGER) + 1").bind(monthKey()).run();
   const base = env.CHALLONGE_API_BASE || "https://api.challonge.com/v1";
   const res = await fetch(`${base}/tournaments/${encodeURIComponent(slug)}.json?include_participants=1&include_matches=1`, {
     headers: { authorization: "Basic " + btoa(`${env.CHALLONGE_USERNAME}:${env.CHALLONGE_API_KEY}`), "user-agent": "tourney-logs", accept: "application/json" },
@@ -104,18 +116,19 @@ async function syncTournament(env, id, sourceUrl) {
   return { id, changed: changed.length, tournament };
 }
 
-// Timer: check ongoing tournaments that are due (see schedule.js: often while results are coming in,
-// rarely when it's quiet). Finished ones are left alone, and so are ones nothing has changed in for
-// STALE_DAYS; the Refresh button still works for those. `force` checks every ongoing one now.
-async function syncOngoing(env, { force = false } = {}) {
+// Timer (every 2 hours, see wrangler.jsonc): check each ongoing tournament once. With nothing ongoing,
+// Challonge isn't called at all. Finished ones are left alone, and so are ones nothing has changed in
+// for STALE_DAYS; the Refresh button still works for those.
+async function syncOngoing(env) {
   await ensureDb(env);
-  const staleDays = Number(env.STALE_DAYS || 60);
+  const staleMs = Number(env.STALE_DAYS || 60) * 86400e3;
   const rows = await env.DB.prepare("SELECT id, data FROM tournaments").all();
   const out = [];
   for (const r of rows.results) {
     const t = JSON.parse(r.data);
     if (isDone(t) || t.autoSync === false) continue;
-    if (!force && !isDue(t, { staleDays })) continue;
+    const last = Date.parse(t.lastChangeAt || t.syncedAt || "") || 0;
+    if (last && Date.now() - last > staleMs) continue;
     try { out.push(await syncTournament(env, r.id)); }
     catch (e) {
       t.lastSyncError = String(e.message || e).slice(0, 300); t.syncedAt = new Date().toISOString();
@@ -182,7 +195,11 @@ async function api(req, env, url) {
   const p = url.pathname, m = req.method;
   let r;
 
-  if (p === "/api/me" && m === "GET") return json({ admin: !!(await authOf(req, env)), loginEnabled: !!env.ADMIN_PASSWORD });
+  if (p === "/api/me" && m === "GET") {
+    const admin = !!(await authOf(req, env));
+    if (admin) await ensureDb(env);
+    return json({ admin, loginEnabled: !!env.ADMIN_PASSWORD, ...(admin ? { challonge: await usage(env) } : {}) });
+  }
   if (p === "/api/login" && m === "POST") {
     const { password } = await body(req, 4096);
     if (!env.ADMIN_PASSWORD) throw httpError(503, "No admin password is set on the server yet.");
@@ -275,7 +292,7 @@ async function api(req, env, url) {
   }
   if (p === "/api/sync" && m === "POST") {      // run the timer's refresh now
     await requireAdmin(req, env);
-    return json({ results: await syncOngoing(env, { force: true }) });
+    return json({ results: await syncOngoing(env) });
   }
   if (p === "/api/backup" && m === "GET") {     // everything except images, as one JSON file
     await requireAdmin(req, env);

@@ -141,6 +141,8 @@ a.t-row:hover .t-name { color: var(--accent); }
 .sync-line .err { color: var(--danger); }
 .admin-bar { display: flex; gap: 8px; flex-wrap: wrap; }
 .btn.danger:hover { border-color: var(--danger); color: var(--danger); }
+.admin-bar { align-items: center; }
+.use-note { font-size: 12px; color: var(--muted); }
 /* Tabs */
 .tabs { display: flex; border-bottom: 1px solid var(--line); margin-top: -6px; }
 .tab { display: inline-flex; align-items: center; min-height: 46px; padding: 8px 20px; margin-bottom: -1px; border-bottom: 3px solid transparent;
@@ -672,12 +674,13 @@ dialog h2 { font-family: var(--font-display); font-size: 28px; margin: 0; text-t
       url ? h("a", { href: url, target: "_blank", rel: "noopener noreferrer" }, "Bracket on " + hostOf(url) + " ↗") : null);
     setKids($("syncLine"),
       t.syncedAt ? h("span", null, "Updated from Challonge " + ago(t.syncedAt)) : null,
-      t.syncedAt && !tDone(t) && t.autoSync !== false ? h("span", null, "Refreshes automatically while it's running") : null,
+      t.syncedAt && !tDone(t) && t.autoSync !== false ? h("span", null, "Checked every 2 hours while it's running") : null,
       canWrite && t.lastSyncError ? h("span", { class: "err" }, "Last refresh failed: " + t.lastSyncError) : null);
     $("adminBar").hidden = !canWrite;
     if (canWrite) setKids($("adminBar"),
       h("button", { class: "btn", type: "button", onclick: (e) => refreshTournament(t, e.currentTarget) }, "Refresh from Challonge"),
-      h("button", { class: "btn danger", type: "button", onclick: () => deleteTournament(t) }, "Delete tournament"));
+      h("button", { class: "btn danger", type: "button", onclick: () => deleteTournament(t) }, "Delete tournament"),
+      challongeUse ? h("span", { class: "use-note" }, "Challonge requests this month: " + challongeUse.used + " of " + challongeUse.limit) : null);
     // Editors only: how many played matches still have no link, with a button to list them.
     const missing = shownMatches(matches).filter(needsLink);
     $("linkWarn").hidden = !missing.length && !missingOnly;
@@ -1324,11 +1327,13 @@ dialog h2 { font-family: var(--font-display); font-size: 28px; margin: 0; text-t
     if (!isFinite(sec)) return "";
     return sec < 90 ? "just now" : sec < 5400 ? Math.round(sec / 60) + " min ago" : sec < 129600 ? Math.round(sec / 3600) + " h ago" : Math.round(sec / 86400) + " days ago";
   }
+  let challongeUse = null;   // { used, limit } for this month, shown to the admin
+  const updateUse = async () => { try { challongeUse = (await apiCall("GET", "/api/me")).challonge || null; render(); } catch {} };
   async function refreshTournament(t, btn) {
     btn.disabled = true; btn.textContent = "Refreshing…";
     try { const r = await store.refresh(t.id); showNotice(r.changed ? r.changed + (r.changed === 1 ? " match" : " matches") + " updated from Challonge." : "Already up to date.", true); }
     catch (ex) { showNotice("Couldn't refresh: " + (ex?.message || "error")); }
-    finally { btn.disabled = false; btn.textContent = "Refresh from Challonge"; }
+    finally { btn.disabled = false; btn.textContent = "Refresh from Challonge"; updateUse(); }
   }
   async function deleteTournament(t) {
     if (!confirm("Delete " + (t.name || "this tournament") + " with all its matches, notes and decks? This can't be undone.")) return;
@@ -1347,7 +1352,7 @@ dialog h2 { font-family: var(--font-display); font-size: 28px; margin: 0; text-t
     e.preventDefault(); $("lgGo").disabled = true;
     try {
       await apiCall("POST", "/api/login", { password: $("lgPass").value });
-      canWrite = true; assets = imageStore; $("loginDlg").close();
+      canWrite = true; assets = imageStore; $("loginDlg").close(); updateUse();
       showNotice("Logged in. You can add tournaments and edit matches and decks.", true); render();
     } catch (ex) { $("lgErr").textContent = ex?.status === 401 ? "Wrong password." : (ex?.message || "Couldn't log in."); $("lgErr").hidden = false; }
     finally { $("lgGo").disabled = false; }
@@ -1438,7 +1443,7 @@ dialog h2 { font-family: var(--font-display); font-size: 28px; margin: 0; text-t
   render();
   store = restStore();
   (async () => {
-    try { const me = await apiCall("GET", "/api/me"); canWrite = !!me.admin; }
+    try { const me = await apiCall("GET", "/api/me"); canWrite = !!me.admin; challongeUse = me.challonge || null; }
     catch { canWrite = false; }
     assets = canWrite ? imageStore : null;
     start();

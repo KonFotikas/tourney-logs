@@ -15,14 +15,15 @@
   // Cloudflare dashboard and add its id here as "database_id".
   "d1_databases": [{ "binding": "DB", "database_name": "tourney-logs" }],
 
-  // Wake every 10 minutes and check the ongoing tournaments that are due (src/schedule.js: every 10 min
-  // right after a result, down to every 6 hours when it's quiet). Finished ones are skipped.
-  "triggers": { "crons": ["*/10 * * * *"] },
+  // Every 2 hours, check each ongoing tournament on Challonge (12 requests a day per ongoing tournament,
+  // none when nothing is ongoing). Finished tournaments are skipped.
+  "triggers": { "crons": ["0 */2 * * *"] },
 
   // Not secret. Secrets (CHALLONGE_USERNAME, CHALLONGE_API_KEY, ADMIN_PASSWORD, optional ADMIN_TOKEN)
   // are set in the Cloudflare dashboard: Worker > Settings > Variables and Secrets.
+  // MONTHLY_LIMIT: Challonge API requests allowed per month; nothing calls Challonge past it until the 1st.
   // STALE_DAYS: stop checking a tournament automatically after this many days with no changes.
-  "vars": { "STALE_DAYS": "60" },
+  "vars": { "MONTHLY_LIMIT": "500", "STALE_DAYS": "60" },
 
   "observability": { "enabled": true }
 }

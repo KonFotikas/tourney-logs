@@ -3,8 +3,7 @@
 Tournament brackets, results and decks, kept up to date from Challonge.
 
 - **Bracket** with lines showing where every player came from, zoom, search, match notes and links.
-- **Ongoing / Finished** tournaments. Ongoing ones refresh from Challonge by themselves: every 10 minutes
-  right after a result comes in, slowing to every 6 hours when it's quiet (made for tournaments that run for weeks).
+- **Ongoing / Finished** tournaments. Ongoing ones are checked on Challonge every 2 hours by themselves.
 - **Decks** (finished tournaments): score, players, archetype with the decklist image, and a pie chart of the decks.
 - **Admin login**: only you can add tournaments and edit things. Everyone else can look, no account needed.
 
@@ -41,17 +40,18 @@ Create**, name it `tourney-logs`, then put its *Database ID* in `wrangler.jsonc`
 ## Using it
 
 - **Add a tournament:** log in → **Add tournament** → paste the Challonge link. It's read straight away.
-- **Updates:** ongoing tournaments are checked every 10 minutes for 2 hours after a result, every 30
-  minutes for the rest of that half day, every 2 hours for 3 days, then every 6 hours. On a tournament
-  page, **Refresh from Challonge** updates it right now. A tournament counts as finished once every match
-  that has to be played is done; finished ones stop refreshing (and so do ones with no changes for 60 days).
+- **Updates:** every 2 hours each ongoing tournament is checked on Challonge. When logged in, **Refresh
+  from Challonge** on a tournament page updates it right now. A tournament counts as finished once every
+  match that has to be played is done; finished ones stop being checked (and so do ones with no changes
+  for 60 days).
 - **Your edits are kept:** notes and links always survive a refresh, and so does any match you edited by
   hand (it keeps your score instead of Challonge's).
 - **Decks:** open a finished tournament → **Decks** → tap a player's name.
 
-**Challonge API use:** one request per tournament per check, only while it's ongoing. A month-long
-tournament with results on about 12 days uses roughly 700 requests; nothing is called between events.
-The timings are in `src/schedule.js`.
+**Challonge API use:** one request per ongoing tournament every 2 hours: 12 a day, about 360 a month for
+one tournament, and none when nothing is ongoing. Every request (automatic, Refresh, adding a tournament)
+is counted, and at 500 in a calendar month the site stops calling Challonge until the 1st
+(`MONTHLY_LIMIT` in `wrangler.jsonc`). When logged in, a tournament page shows this month's count.
 
 ## Backups
 
