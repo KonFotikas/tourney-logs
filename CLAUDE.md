@@ -5,7 +5,8 @@ free plan. The owner deploys by pushing to `main` (Cloudflare Workers Builds is 
 
 ## Layout
 - `src/worker.js`: the Worker. Serves `public/` via the ASSETS binding; `/api/*` JSON API; `/img/<id>`
-  decklist images; `scheduled()` refreshes ongoing tournaments (cron in `wrangler.jsonc`).
+  decklist images; `scheduled()` checks ongoing tournaments that are due (cron in `wrangler.jsonc` wakes every 10 min;
+  `src/schedule.js` decides who is due: 10 min after a result, slowing to 6 h when quiet).
 - `src/importer.js`: Challonge v1 JSON -> tournament + match docs. Keep it the single source of import
   logic; `test/importer.test.js` covers finals labels, the unneeded-reset count rule and edit preservation.
 - `public/index.html`: the whole front end (CSS + JS inline, no build step). Talks to `/api` only.
@@ -22,7 +23,8 @@ free plan. The owner deploys by pushing to `main` (Cloudflare Workers Builds is 
 - Deck doc: player, deck, imageId (an `images` row), imageUrl, updatedAt.
 - A match with `edited: true` keeps p1/p2/score/winner/status/when on re-import; notes/links always kept.
 - Finished = counts.done >= counts.total (the grand final reset is left out of counts when player 1 won
-  the grand final) or Challonge state "complete". Finished tournaments aren't auto-refreshed.
+  the grand final) or Challonge state "complete". Finished tournaments aren't auto-refreshed; nor are ones unchanged for STALE_DAYS (60).
+- Tournaments run over several weeks: keep Challonge calls low (see `test/schedule.test.js` month estimate).
 
 ## Secrets (Cloudflare dashboard, never in the repo)
 `CHALLONGE_USERNAME`, `CHALLONGE_API_KEY`, `ADMIN_PASSWORD`, optional `ADMIN_TOKEN`

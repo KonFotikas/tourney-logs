@@ -2,6 +2,7 @@
 // matches, decks and decklist images in D1 (free, no card needed), and refreshes ongoing tournaments from Challonge on a
 // timer. The Challonge key and the admin password live in Worker secrets and never reach the browser.
 import { buildFromChallonge, challongeSlug } from "./importer.js";
+import { isDue } from "./schedule.js";
 import seed from "../data/seed.json";
 
 // ---------- database ----------
@@ -103,17 +104,18 @@ async function syncTournament(env, id, sourceUrl) {
   return { id, changed: changed.length, tournament };
 }
 
-// Timer: refresh every ongoing tournament. Finished ones are left alone, and so are ones nothing has
-// changed in for STALE_DAYS (the Refresh button still works for those).
-async function syncOngoing(env) {
+// Timer: check ongoing tournaments that are due (see schedule.js: often while results are coming in,
+// rarely when it's quiet). Finished ones are left alone, and so are ones nothing has changed in for
+// STALE_DAYS; the Refresh button still works for those. `force` checks every ongoing one now.
+async function syncOngoing(env, { force = false } = {}) {
   await ensureDb(env);
-  const staleMs = Number(env.STALE_DAYS || 14) * 86400e3;
+  const staleDays = Number(env.STALE_DAYS || 60);
   const rows = await env.DB.prepare("SELECT id, data FROM tournaments").all();
   const out = [];
   for (const r of rows.results) {
     const t = JSON.parse(r.data);
     if (isDone(t) || t.autoSync === false) continue;
-    if (t.lastChangeAt && Date.now() - Date.parse(t.lastChangeAt) > staleMs) continue;
+    if (!force && !isDue(t, { staleDays })) continue;
     try { out.push(await syncTournament(env, r.id)); }
     catch (e) {
       t.lastSyncError = String(e.message || e).slice(0, 300); t.syncedAt = new Date().toISOString();
@@ -273,7 +275,7 @@ async function api(req, env, url) {
   }
   if (p === "/api/sync" && m === "POST") {      // run the timer's refresh now
     await requireAdmin(req, env);
-    return json({ results: await syncOngoing(env) });
+    return json({ results: await syncOngoing(env, { force: true }) });
   }
   if (p === "/api/backup" && m === "GET") {     // everything except images, as one JSON file
     await requireAdmin(req, env);

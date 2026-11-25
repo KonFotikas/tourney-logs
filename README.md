@@ -3,12 +3,13 @@
 Tournament brackets, results and decks, kept up to date from Challonge.
 
 - **Bracket** with lines showing where every player came from, zoom, search, match notes and links.
-- **Ongoing / Finished** tournaments. Ongoing ones refresh from Challonge every 10 minutes by themselves.
+- **Ongoing / Finished** tournaments. Ongoing ones refresh from Challonge by themselves: every 10 minutes
+  right after a result comes in, slowing to every 6 hours when it's quiet (made for tournaments that run for weeks).
 - **Decks** (finished tournaments): score, players, archetype with the decklist image, and a pie chart of the decks.
 - **Admin login**: only you can add tournaments and edit things. Everyone else can look, no account needed.
 
 It runs on Cloudflare's free plan as one Worker: the site, an API, a D1 database (tournaments, matches,
-decks and decklist images) and a 10-minute timer. Your Challonge API key stays on the server.
+decks and decklist images) and a timer that checks Challonge. Your Challonge API key stays on the server.
 
 ## Put it online (once)
 
@@ -40,16 +41,17 @@ Create**, name it `tourney-logs`, then put its *Database ID* in `wrangler.jsonc`
 ## Using it
 
 - **Add a tournament:** log in → **Add tournament** → paste the Challonge link. It's read straight away.
-- **Updates:** ongoing tournaments refresh every 10 minutes. On a tournament page, **Refresh from
-  Challonge** updates it right now. A tournament counts as finished once every match that has to be played
-  is done; finished ones stop refreshing (and so do ones nothing has changed in for 14 days).
+- **Updates:** ongoing tournaments are checked every 10 minutes for 2 hours after a result, every 30
+  minutes for the rest of that half day, every 2 hours for 3 days, then every 6 hours. On a tournament
+  page, **Refresh from Challonge** updates it right now. A tournament counts as finished once every match
+  that has to be played is done; finished ones stop refreshing (and so do ones with no changes for 60 days).
 - **Your edits are kept:** notes and links always survive a refresh, and so does any match you edited by
   hand (it keeps your score instead of Challonge's).
 - **Decks:** open a finished tournament → **Decks** → tap a player's name.
 
-**Challonge API use:** one request per tournament per refresh, only while it's ongoing: at most 6 an hour
-per tournament, and none between events. To refresh less often, change `"*/10 * * * *"` in
-`wrangler.jsonc` (for example `"*/30 * * * *"` for every 30 minutes).
+**Challonge API use:** one request per tournament per check, only while it's ongoing. A month-long
+tournament with results on about 12 days uses roughly 700 requests; nothing is called between events.
+The timings are in `src/schedule.js`.
 
 ## Backups
 
